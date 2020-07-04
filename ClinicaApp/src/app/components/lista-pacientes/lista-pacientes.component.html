@@ -1,0 +1,35 @@
+<div style="align-items: center;">
+    <h2>Pacientes</h2>
+<br />
+<div>
+    <button class="button btn-success" (click)="Crear()">Crear Nuevo Paciente</button>
+</div>
+<br />
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Nombres</th>
+            <th># Documento</th>
+            <th># Seguro Social</th>            
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let paciente of lstPacientes">
+            <td>{{paciente.idPaciente}}</td>
+            <td>{{paciente.nombres}}</td>
+            <td>{{paciente.numDocumento}}</td>
+            <td>{{paciente.numSeguroSocial}}</td>            
+            <td>
+                <div>
+                    <button class="button btn-info" (click)="Detalle(paciente.idPaciente)">Detalles</button>
+                    <button class="button btn-warning" (click)="Editar(paciente.idPaciente)">Editar</button>
+                    <button class="button btn-danger" (click)="Borrar(paciente.idPaciente)">Borrar</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>

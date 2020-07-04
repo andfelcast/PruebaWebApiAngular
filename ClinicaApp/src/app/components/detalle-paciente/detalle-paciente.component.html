@@ -1,0 +1,45 @@
+<h2>Información Paciente</h2>
+<div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ paciente.nombres }}</td>
+            </tr>
+            <tr>
+                <th>Número Documento</th>
+                <td>{{ paciente.numDocumento }}</td>
+            </tr>
+            <tr>
+                <th>Número seguro Social</th>
+                <td>{{ paciente.numSeguroSocial }}</td>
+            </tr>
+            <tr>
+                <th>Dirección</th>                
+                <td>{{ paciente.direccion }}</td>
+            </tr>            
+            <tr>
+                <th>Código Postal</th>                
+                <td>{{ paciente.codPostal }}</td>
+            </tr>            
+            <tr>
+                <th>Teléfono</th>                
+                <td>{{ paciente.telContacto }}</td>
+            </tr>
+            <tr>
+                <th>Correo electrónico</th>                
+                <td>{{ paciente.email }}</td>
+            </tr>                         
+            <tr *ngIf="paciente.pacienteXDoctores != null && paciente.pacienteXDoctores.length > 0">
+                <th>Doctores</th>
+                <td>
+                    <div *ngFor="let doc of paciente.pacienteXDoctores">
+                        {{ doc.doctor.nombres}}
+                    </div>                    
+                </td>
+            </tr>           
+        </tbody>
+    </table>
+    <br />
+    <button class="button btn-info" (click)="Volver()">Volver</button>
+</div>

@@ -1,0 +1,26 @@
+<br >
+<h2>Información Doctor</h2>
+<div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ doctor.nombres }}</td>
+            </tr>
+            <tr>
+                <th>Credencial</th>
+                <td>{{ doctor.numCredencial }}</td>
+            </tr>
+            <tr>
+                <th>Hospital</th>
+                <td>{{ doctor.hospital }}</td>
+            </tr>
+            <tr>
+                <th>Especialidad</th>                
+                <td>{{ doctor.especialidad.nombre }}</td>
+            </tr>            
+        </tbody>
+    </table>
+    <br />
+    <button class="button btn-info" (click)="Volver()">Volver</button>
+</div>

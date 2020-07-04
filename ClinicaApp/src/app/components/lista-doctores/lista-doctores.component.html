@@ -1,0 +1,35 @@
+<div style="align-items: center;">
+    <h2>Doctores</h2>
+<br />
+<div>
+    <button type="button" class="button btn-success" (click)="Crear()">Crear Nuevo Doctor</button>
+</div>
+<br />
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Especialidad</th>
+            <th>Matricula</th>
+            <th>Hospital</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doc of lstDoctores">
+            <td>{{doc.idDoctor}}</td>
+            <td>{{doc.nombres}}</td>
+            <td>{{doc.especialidad.nombre}}</td>
+            <td>{{doc.numCredencial}}</td>
+            <td>{{doc.hospital}}</td>
+            <td>
+                <div>
+                    <button class="button btn-info" (click)="Detalle(doc.idDoctor)">Detalles</button>                                        
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>

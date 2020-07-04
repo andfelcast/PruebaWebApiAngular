@@ -1,0 +1,55 @@
+<h2>Crear Nuevo Doctor</h2>
+<div>
+    <form [formGroup] = "DoctorForm">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Nombre</th>
+                    <td>
+                        <input type="hidden" formControlName="idDoctor" >
+                        <input type="text" formControlName="nombre" maxlength="50" >
+                        <div *ngIf="submitted && DoctorForm.controls.nombre.errors" class="text-danger">  
+                            <div *ngIf="DoctorForm.controls.nombre.errors.required">Campo obligatorio</div>  
+                          </div>   
+                        </td>
+                </tr>
+                <tr>
+                    <th>Número Credencial</th>
+                    <td>
+                    <input type="number" maxlength="10" formControlName="numCredencial" >
+                        <div *ngIf="submitted && DoctorForm.controls.numCredencial.errors" class="text-danger">  
+                            <div *ngIf="DoctorForm.controls.numCredencial.errors.required">Campo obligatorio</div>  
+                          </div>   
+                        </td>
+                </tr>
+                <tr>
+                    <th>Hospital</th>                    
+                    <td>
+                        <input type="text" maxlength="50" formControlName="hospital" >
+                        <div *ngIf="submitted && DoctorForm.controls.hospital.errors" class="text-danger">  
+                            <div *ngIf="DoctorForm.controls.hospital.errors.required">Campo obligatorio</div>  
+                          </div>
+                        </td>                          
+                </tr>
+                <tr>
+                    <th>Especialidad</th>                
+                    <td>
+                        <select formControlName="especialidad">
+                            <option value="">Seleccione una</option>
+                            <option *ngFor="let esp of lstEspecialidades" [value]="esp.idEspecialidad">{{ esp.nombre }}</option>
+                        </select>                        
+                        <div *ngIf="submitted && DoctorForm.controls.especialidad.errors" class="text-danger">  
+                            <div *ngIf="DoctorForm.controls.especialidad.errors.required">Campo obligatorio</div>  
+                        </div>
+                    </td>
+                </tr>                                                          
+            </tbody>
+        </table>
+        <br />
+        <button type="submit" class="button btn-info" (click)="Insertar()">Guardar</button>        
+    </form>    
+    <br />
+    <button type="button" class="button btn-info" (click)="Volver()">Volver</button>
+</div>
+
+

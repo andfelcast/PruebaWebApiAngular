@@ -1,0 +1,77 @@
+<h2>Editar Paciente</h2>
+<div>
+    <form [formGroup] = "PacienteForm">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Nombre</th>
+                    <td>
+                        <input type="hidden" formControlName="idPaciente" >
+                        <input type="text" formControlName="nombre" maxlength="50" >
+                        <div *ngIf="submitted && PacienteForm.controls.nombre.errors" class="text-danger">  
+                            <div *ngIf="PacienteForm.controls.nombre.errors.required">Campo obligatorio</div>  
+                          </div>   
+                        </td>
+                </tr>
+                <tr>
+                    <th>Número Documento</th>
+                    <td>
+                    <input type="number" maxlength="10" formControlName="numDocumento" >
+                        <div *ngIf="submitted && PacienteForm.controls.numDocumento.errors" class="text-danger">  
+                            <div *ngIf="PacienteForm.controls.numDocumento.errors.required">Campo obligatorio</div>  
+                          </div>   
+                        </td>
+                </tr>
+                <tr>
+                    <th>Número Seguro Social</th>                    
+                    <td>
+                        <input type="text" maxlength="10" formControlName="numSeguroSocial" >
+                        <div *ngIf="submitted && PacienteForm.controls.numSeguroSocial.errors" class="text-danger">  
+                            <div *ngIf="PacienteForm.controls.numSeguroSocial.errors.required">Campo obligatorio</div>  
+                          </div>
+                        </td>
+                          
+                </tr>
+                <tr>
+                    <th>Dirección</th>                
+                    <td>
+                    <input type="text" formControlName="direccion" maxlength="50">
+                        <div *ngIf="submitted && PacienteForm.controls.direccion.errors" class="text-danger">  
+                            <div *ngIf="PacienteForm.controls.direccion.errors.required">Campo obligatorio</div>  
+                          </div>
+                        </td>
+                </tr>            
+                <tr>
+                    <th>Código Postal</th>                
+                    <td>
+                        <input type="number" formControlName="codPostal" maxlength="10" >
+                    </td>
+                </tr>            
+                <tr>
+                    <th>Teléfono</th>                
+                    <td>
+                        <input type="number" formControlName="telefono" maxlength="15" >
+                        <div *ngIf="submitted && PacienteForm.controls.telefono.errors" class="text-danger">  
+                            <div *ngIf="PacienteForm.controls.telefono.errors.required">Campo obligatorio</div>  
+                          </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Correo electrónico</th>                
+                    <td>
+                        <input type="email" formControlName="correo" maxlength="20" >
+                        <div *ngIf="submitted && PacienteForm.controls.correo.errors" class="text-danger">  
+                            <div *ngIf="PacienteForm.controls.correo.errors.required">Campo obligatorio</div>  
+                          </div>
+                    </td>
+                </tr>                                                    
+            </tbody>
+        </table>
+        <br />
+        <button type="submit" class="button btn-info" (click)="Actualizar()">Guardar</button>        
+    </form>    
+    <br />
+    <button type="button" class="button btn-info" (click)="Volver()">Volver</button>
+</div>
+
+
